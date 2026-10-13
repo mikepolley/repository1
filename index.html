@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polley Advisory Group | Semiconductor &amp; AI Technology Advisory</title>
+<meta name="description" content="Independent semiconductor, AI and computational imaging advisory for investors, boards and technology companies, led by Michael Polley, Ph.D., former Samsung SVP, TI Fellow and IEEE Fellow.">
+<meta property="og:title" content="Polley Advisory Group">
+<meta property="og:description" content="Semiconductor & AI technology advisory for investors, boards and technology companies.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mikepolley.com/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26'%3E%3Crect width='26' height='26' fill='%2316202E'/%3E%3Cg fill='%235B6A80'%3E%3Crect x='3' y='3' width='6' height='6'/%3E%3Crect x='3' y='10' width='6' height='6'/%3E%3Crect x='10' y='10' width='6' height='6'/%3E%3Crect x='3' y='17' width='6' height='6'/%3E%3Crect x='10' y='17' width='6' height='6'/%3E%3Crect x='17' y='17' width='6' height='6'/%3E%3C/g%3E%3Cg fill='%23C9874B'%3E%3Crect x='10' y='3' width='6' height='6'/%3E%3Crect x='17' y='3' width='6' height='6'/%3E%3Crect x='17' y='10' width='6' height='6'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16202E;
+  --ink-2:#1F2B3C;
+  --line-dark:#334055;
+  --steel:#5B6A80;
+  --copper:#C9874B;
+  --copper-deep:#9A5F2B;
+  --paper:#F4F5F3;
+  --paper-2:#E9EBE7;
+  --text:#1E2734;
+  --muted:#556072;
+  --on-dark:#F2F1EC;
+  --on-dark-muted:#AEB6C2;
+  --display:'Archivo', 'Helvetica Neue', sans-serif;
+  --body:'IBM Plex Sans', 'Helvetica Neue', sans-serif;
+  --wrap:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--text);font-family:var(--body);font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--copper);color:var(--ink);padding:10px 16px;z-index:10}
+.skip:focus{left:16px;top:16px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
+@media (max-width:640px){.wrap{padding:0 20px}}
+
+/* Brand mark */
+.mark{display:inline-grid;grid-template-columns:repeat(3,var(--s,7px));grid-auto-rows:var(--s,7px);gap:calc(var(--s,7px) * .42)}
+.mark i{background:var(--steel)}
+.mark i.on{background:var(--copper)}
+
+/* Header */
+.top{background:var(--ink);color:var(--on-dark)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:26px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand-name{display:flex;flex-direction:column;gap:5px;line-height:1}
+.brand-name b{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.24em}
+.brand-name span{font-family:var(--display);font-weight:500;font-size:9.5px;letter-spacing:.42em;color:var(--copper)}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:28px;flex-wrap:wrap}
+.nav ul a{text-decoration:none;font-size:15px;color:var(--on-dark-muted)}
+.nav ul a:hover{color:var(--on-dark)}
+
+/* Hero */
+.hero{padding:64px 0 96px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:64px;align-items:center}
+.hero h1{font-family:var(--display);font-stretch:112%;font-weight:600;font-size:clamp(38px,5.2vw,66px);line-height:1.04;letter-spacing:-.015em;margin:0 0 28px;text-wrap:balance}
+.hero p{font-size:20px;line-height:1.6;color:var(--on-dark-muted);max-width:36em;margin:0 0 36px;text-wrap:pretty}
+.actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;font-weight:500;font-size:16px;text-decoration:none;border:1px solid var(--copper)}
+.btn.primary{background:var(--copper);color:var(--ink)}
+.btn.primary:hover{background:#D9985D}
+.btn.ghost{color:var(--on-dark)}
+.btn.ghost:hover{background:var(--ink-2)}
+.field{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:6px;width:100%;max-width:520px;justify-self:end}
+.field i{aspect-ratio:1;background:var(--steel);opacity:var(--o,.2);transition:background-color .5s ease,opacity .5s ease}
+.field i.lit{background:var(--copper);opacity:1}
+.field i.flash{background:var(--copper);opacity:.85;transition:none}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:48px;padding:40px 0 72px}
+  .field{justify-self:start;max-width:420px}
+}
+
+/* Credentials */
+.creds{border-bottom:1px solid var(--paper-2)}
+.creds ul{list-style:none;margin:0;padding:28px 0;display:flex;flex-wrap:wrap;gap:14px 40px;font-size:16px;color:var(--muted)}
+.creds li{display:flex;align-items:center;gap:10px}
+.creds li::before{content:"";width:7px;height:7px;background:var(--copper);flex:none}
+.creds strong{color:var(--text);font-weight:600}
+
+/* Sections */
+section{padding:104px 0}
+@media (max-width:640px){section{padding:72px 0}}
+h2{font-family:var(--display);font-stretch:108%;font-weight:600;font-size:clamp(30px,3.6vw,44px);line-height:1.1;letter-spacing:-.01em;margin:0 0 20px;text-wrap:balance}
+.lede{font-size:20px;color:var(--muted);max-width:38em;margin:0 0 56px;text-wrap:pretty}
+h3{font-family:var(--display);font-weight:600;font-size:22px;line-height:1.25;margin:0 0 10px}
+
+/* Practice areas: ruled rows, not cards */
+.areas{border-top:1px solid #CDD1CB}
+.area{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:40px;padding:36px 0;border-bottom:1px solid #CDD1CB}
+.area h3{margin:0;font-size:24px}
+.area p{margin:0;color:var(--muted);max-width:36em}
+@media (max-width:760px){.area{grid-template-columns:1fr;gap:10px}}
+
+/* Audiences */
+.who{background:var(--paper-2)}
+.who-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px}
+.who-grid div{border-top:3px solid var(--ink);padding-top:22px}
+.who-grid p{margin:0;color:var(--muted)}
+@media (max-width:860px){.who-grid{grid-template-columns:1fr;gap:36px}}
+
+/* Track record */
+.record{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:64px}
+.record .intro p{color:var(--muted);margin:0}
+.timeline{list-style:none;margin:0;padding:0;border-left:1px solid #CDD1CB}
+.timeline li{position:relative;padding:0 0 44px 36px}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-5px;top:9px;width:9px;height:9px;background:var(--copper)}
+.when{font-size:15px;font-weight:500;color:var(--copper-deep);margin:0 0 4px}
+.timeline h3{margin-bottom:4px}
+.role{margin:0 0 12px;color:var(--muted);font-style:italic}
+.timeline p{margin:0 0 10px;max-width:38em}
+.features{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.features li{padding:5px 12px;border:1px solid #C4C9C2;font-size:14.5px;color:var(--text)}
+.features li::before{display:none}
+@media (max-width:860px){.record{grid-template-columns:1fr;gap:40px}}
+
+/* About */
+.about{background:#fff}
+.about-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:64px;align-items:start}
+.about-grid p{margin:0 0 18px;max-width:38em}
+.about .mark{--s:30px;margin-top:8px}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:32px}.about .mark{--s:20px}}
+
+/* Engagements */
+.ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:#CDD1CB;border:1px solid #CDD1CB}
+.ways div{background:var(--paper);padding:32px 28px}
+.ways p{margin:0;color:var(--muted);font-size:17px}
+@media (max-width:860px){.ways{grid-template-columns:1fr}}
+
+/* Contact */
+.contact{background:var(--ink);color:var(--on-dark)}
+.contact h2{color:var(--on-dark)}
+.contact .lede{color:var(--on-dark-muted);margin-bottom:40px}
+.email{display:inline-block;font-family:var(--display);font-stretch:110%;font-weight:500;font-size:clamp(24px,3.4vw,40px);color:var(--on-dark);text-decoration:none;border-bottom:2px solid var(--copper);padding-bottom:4px}
+.email:hover{color:var(--copper)}
+.contact-links{display:flex;gap:28px;flex-wrap:wrap;margin-top:32px;font-size:16px}
+.contact-links a{color:var(--on-dark-muted)}
+.contact-links a:hover{color:var(--on-dark)}
+footer{background:var(--ink);color:#8C95A3;font-size:14px;border-top:1px solid var(--line-dark)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;padding-bottom:28px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#" aria-label="Polley Advisory Group, home">
+        <span class="mark" aria-hidden="true"><i></i><i class="on"></i><i class="on"></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></span>
+        <span class="brand-name"><b>POLLEY</b><span>ADVISORY GROUP</span></span>
+      </a>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#record">Track record</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <div>
+        <h1>Know what the technology can really do before you bet on it.</h1>
+        <p>Polley Advisory Group gives investors, boards and technology leaders an independent, expert read on AI, computational imaging and semiconductor technology, drawing on 30 years of building it at Samsung and Texas Instruments.</p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:mike@mikepolley.com?subject=Polley%20Advisory%20Group%20inquiry">Start a conversation</a>
+          <a class="btn ghost" href="#services">See how I help</a>
+        </div>
+      </div>
+      <div class="field" id="field" aria-hidden="true"></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div class="creds">
+    <div class="wrap">
+      <ul>
+        <li><span><strong>Former SVP</strong>, Samsung Research America</span></li>
+        <li><span><strong>TI Fellow</strong>, Texas Instruments</span></li>
+        <li><strong>IEEE Fellow</strong></li>
+        <li><span><strong>Ph.D.</strong>, MIT</span></li>
+        <li><span><strong>50+</strong> U.S. patents</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Where I help</h2>
+      <p class="lede">Most technology decisions turn on a few hard questions: is it real, is it different, how long will it take, and will it matter in the market. I help you answer them with confidence.</p>
+      <div class="areas">
+        <div class="area">
+          <h3>Technology and investment due diligence</h3>
+          <p>An independent assessment of emerging technologies, product readiness, technical differentiation, development requirements and market potential, to inform investment, acquisition and partnership decisions.</p>
+        </div>
+        <div class="area">
+          <h3>AI and computational imaging</h3>
+          <p>Strategy for AI and machine-learning products, edge and on-device computing, and imaging pipelines, with differentiation that spans algorithms, embedded software and silicon.</p>
+        </div>
+        <div class="area">
+          <h3>Semiconductor and SoC architecture</h3>
+          <p>Chipset roadmaps, architecture trade-offs, power-efficient system design, development strategy, and make, buy or partner decisions.</p>
+        </div>
+        <div class="area">
+          <h3>R&amp;D strategy and IP leadership</h3>
+          <p>Advanced technology R&amp;D, technology and product roadmaps, organizing for innovation, governance, technical talent, commercialization strategy and patent portfolios.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="who" aria-labelledby="who-h">
+    <div class="wrap">
+      <h2 id="who-h">Who I work with</h2>
+      <p class="lede">Engagements are tailored to the decision in front of you, whether that is a term sheet, a board vote or a product roadmap.</p>
+      <div class="who-grid">
+        <div>
+          <h3>Venture and corporate investors</h3>
+          <p>Technical due diligence on AI, imaging, semiconductor and consumer-technology companies, so you know what you are buying and what it will take to deliver.</p>
+        </div>
+        <div>
+          <h3>Boards and executive teams</h3>
+          <p>Independent technical counsel on strategy, timing and risk, including board and technical advisory board roles with small and mid-sized companies.</p>
+        </div>
+        <div>
+          <h3>Technology companies</h3>
+          <p>Hands-on guidance on roadmaps, architecture, product and IP strategy, and building R&amp;D organizations that ship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="record">
+    <div class="wrap record">
+      <div class="intro">
+        <h2>Three decades of turning research into products</h2>
+        <p>The advice comes from building technology at scale, from first research results through annual flagship smartphone launches.</p>
+      </div>
+      <ol class="timeline">
+        <li>
+          <p class="when">2026 – present</p>
+          <h3>Polley Advisory Group</h3>
+          <p class="role">Founder and Principal</p>
+          <p>Independent advisory practice serving venture capital firms, investors, boards and technology companies.</p>
+        </li>
+        <li>
+          <p class="when">2013 – 2026</p>
+          <h3>Samsung Research America</h3>
+          <p class="role">Senior Vice President, Head of the Mobile Processor Innovation Lab</p>
+          <p>Co-founded and led Samsung's U.S. lab for advanced camera and computational imaging, spanning AI algorithms, silicon and on-device software. Its Multi-Frame Processor and AI pixel-processing technologies have shipped in every Galaxy flagship since 2014, across the Galaxy S, Note, Z Fold and Z Flip lines.</p>
+          <p>The lab delivered the core technology behind heavily advertised camera features:</p>
+          <ul class="features">
+            <li>Nightography</li>
+            <li>Expert RAW</li>
+            <li>Under-Display Camera</li>
+            <li>HDR</li>
+            <li>Advanced Digital Zoom</li>
+          </ul>
+        </li>
+        <li>
+          <p class="when">Before 2013</p>
+          <h3>Texas Instruments</h3>
+          <p class="role">TI Fellow, Chief Architect</p>
+          <p>Over 18 years, served as Chief Architect of multiple TI businesses, defining generations of chipset architectures for OMAP application processors, imaging, audio, cellular media and communications chips.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="mark" aria-hidden="true"><i></i><i class="on"></i><i class="on"></i><i></i><i></i><i class="on"></i><i></i><i></i><i></i></span>
+      </div>
+      <div>
+        <h2>About Michael Polley</h2>
+        <p>Mike Polley is a semiconductor and AI technology executive with 30 years of R&amp;D and business leadership at Samsung and Texas Instruments. His work has centered on one question: how to turn breakthrough technology into product differentiation and market advantage.</p>
+        <p>He is an IEEE Fellow, a TI Fellow and an MIT Ph.D., with more than 50 U.S. patents. Boards, C-suites and investors engage him to evaluate emerging technologies, shape differentiation strategy, judge development timing and assess likely market impact.</p>
+        <p>He founded Polley Advisory Group in 2026 to bring that experience to investors and companies making high-stakes technology decisions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ways-h">
+    <div class="wrap">
+      <h2 id="ways-h">Ways to work together</h2>
+      <p class="lede">Every engagement starts with a short call to understand the decision and the timeline.</p>
+      <div class="ways">
+        <div>
+          <h3>Focused projects</h3>
+          <p>Technical due diligence or a technology assessment, delivered as a clear written view with the risks and open questions called out.</p>
+        </div>
+        <div>
+          <h3>Ongoing advisory</h3>
+          <p>A standing advisory relationship for strategy, roadmap and architecture questions as they come up.</p>
+        </div>
+        <div>
+          <h3>Board roles</h3>
+          <p>Board and technical advisory board seats with small and mid-sized technology companies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Start a conversation</h2>
+      <p class="lede">Tell me about the technology, the decision you're facing and your timing.</p>
+      <a class="email" href="mailto:mike@mikepolley.com?subject=Polley%20Advisory%20Group%20inquiry">mike@mikepolley.com</a>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/mikepolley">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Polley Advisory Group, a d/b/a of SL AI Investments, LLC</span>
+    <span>mikepolley.com</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var field = document.getElementById('field');
+  if(!field) return;
+  var cols = 14, rows = 10, seed = 11;
+  function rnd(){ seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+  var arrow = {};
+  for (var c = 2; c <= 11; c++) arrow[c + ',' + (11 - c)] = true;
+  ['9,0','10,0','11,1','11,2'].forEach(function(k){ arrow[k] = true; });
+  var cells = [];
+  for (var r = 0; r < rows; r++){
+    for (var c2 = 0; c2 < cols; c2++){
+      var i = document.createElement('i');
+      var o = (0.1 + 0.32 * rnd()) * (0.55 + 0.45 * (c2 / (cols - 1)));
+      i.style.setProperty('--o', o.toFixed(3));
+      field.appendChild(i);
+      cells.push({ el: i, c: c2, r: r, onArrow: !!arrow[c2 + ',' + r] });
+    }
+  }
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce){
+    cells.forEach(function(x){ if (x.onArrow) x.el.classList.add('lit'); });
+    return;
+  }
+  // One orchestrated moment: a wave rises from the lower left to the upper right, leaving the arrow lit.
+  cells.forEach(function(x){
+    var d = (x.c + (rows - 1 - x.r)) * 55 + 300;
+    setTimeout(function(){
+      if (x.onArrow){ x.el.classList.add('lit'); return; }
+      x.el.classList.add('flash');
+      setTimeout(function(){ x.el.classList.remove('flash'); }, 140);
+    }, d);
+  });
+})();
+</script>
+</body>
+</html>
